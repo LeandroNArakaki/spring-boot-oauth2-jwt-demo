@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserRepository extends JpaRepository<Long, User> {
+public interface UserRepository extends JpaRepository<User,Long > {
 
     @Query(nativeQuery = true, value = """
             	SELECT tb_user.email AS username, tb_user.password, tb_role.id AS roleId, tb_role.authority
